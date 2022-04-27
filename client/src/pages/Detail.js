@@ -47,7 +47,7 @@ function Detail() {
         })
       })
     }
-  }, [products, data, dispatch, id])
+  }, [products, data, loading, dispatch, id])
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === id)
