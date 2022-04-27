@@ -1,32 +1,50 @@
-import React, { useEffect } from 'react';
-import { useQuery } from '@apollo/client';
+import React, { useEffect } from 'react'
+import { useQuery } from '@apollo/client'
 
-import ProductItem from '../ProductItem';
-import { QUERY_PRODUCTS } from '../../utils/queries';
-import spinner from '../../assets/spinner.gif';
+import ProductItem from '../ProductItem'
+import { QUERY_PRODUCTS } from '../../utils/queries'
+import spinner from '../../assets/spinner.gif'
 
 import { useStoreContext } from '../../utils/GlobalState'
-import {UPDATE_PRODUCTS} from '../../utils/actions'
+import { UPDATE_PRODUCTS } from '../../utils/actions'
+
+import { idbPromise } from '../../utils/helpers'
 
 function ProductList() {
-  const [state, dispatch] = useStoreContext();
-  const { currentCategory } = state;
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const [state, dispatch] = useStoreContext()
+  const { currentCategory } = state
+  const { loading, data } = useQuery(QUERY_PRODUCTS)
 
   useEffect(() => {
     if (data) {
       dispatch({
         type: UPDATE_PRODUCTS,
-        products: data.products
+        products: data.products,
+      })
+      // also save each product to IndexedDB
+      data.products.forEach((product) => {
+        idbPromise('products', 'put', product)
+      })
+      // add else if to check if 'loading' is undefined in 'useQuery()' hook
+    } else if (!loading) {
+      // offiline, get all data from the 'products' store
+      idbPromise('products', 'get').then((products) => {
+        // use retrieved data to set global state for offline browsing
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: products,
+        })
       })
     }
-  }, [data, dispatch]);
+  }, [data, loading, dispatch])
 
   function filterProducts() {
     if (!currentCategory) {
       return state.products
     }
-    return state.products.filter(product => product.category._id === currentCategory)
+    return state.products.filter(
+      (product) => product.category._id === currentCategory,
+    )
   }
 
   return (
@@ -50,7 +68,7 @@ function ProductList() {
       )}
       {loading ? <img src={spinner} alt="loading" /> : null}
     </div>
-  );
+  )
 }
 
-export default ProductList;
+export default ProductList
