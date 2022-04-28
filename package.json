@@ -17,6 +17,7 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "@stripe/stripe-js": "^1.29.0"
+    "@stripe/stripe-js": "^1.29.0",
+    "are-we-there-yet": "^3.0.0"
   }
 }
