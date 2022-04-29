@@ -21,8 +21,6 @@
     "@stripe/stripe-js": "^1.29.0",
     "install": "^0.13.0",
     "npm": "^8.8.0",
-    "react-redux": "^8.0.1",
-    "ts-invariant": "^0.9.4",
-    "zen-observable-ts": "^1.1.0"
+    "react-redux": "^8.0.1"
   }
 }
