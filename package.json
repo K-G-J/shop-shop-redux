@@ -19,9 +19,9 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "@stripe/stripe-js": "^1.29.0",
+    "apollo-server-express": "^3.6.7",
     "install": "^0.13.0",
     "npm": "^8.8.0",
-    "react-redux": "^8.0.1",
-    "tslib": "^2.4.0"
+    "react-redux": "^8.0.1"
   }
 }
