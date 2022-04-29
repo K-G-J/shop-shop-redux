@@ -20,6 +20,7 @@
     "@reduxjs/toolkit": "^1.8.1",
     "@stripe/stripe-js": "^1.29.0",
     "are-we-there-yet": "^3.0.0",
-    "readable-stream": "^3.6.0"
+    "readable-stream": "^3.6.0",
+    "streams": "^0.0.7"
   }
 }
