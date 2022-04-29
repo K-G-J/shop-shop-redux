@@ -21,6 +21,7 @@
     "@reduxjs/toolkit": "^1.8.1",
     "@stripe/stripe-js": "^1.29.0",
     "are-we-there-yet": "^3.0.0",
+    "merge-options": "^3.0.4",
     "react-redux": "^8.0.1"
   }
 }
