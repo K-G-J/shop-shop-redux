@@ -20,7 +20,11 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "@stripe/stripe-js": "^1.29.0",
+    "autoprefixer": "^10.4.5",
+    "caniuse-lite": "^1.0.30001334",
+    "postcss-preset-env": "^7.4.4",
     "react-redux": "^8.0.1",
+    "react-scripts": "^5.0.1",
     "ts-invariant": "^0.9.4",
     "zen-observable-ts": "^1.1.0"
   }
