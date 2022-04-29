@@ -22,6 +22,7 @@
     "apollo-server-express": "^3.6.7",
     "install": "^0.13.0",
     "npm": "^8.8.0",
-    "react-redux": "^8.0.1"
+    "react-redux": "^8.0.1",
+    "ts-invariant": "^0.9.4"
   }
 }
