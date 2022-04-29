@@ -19,7 +19,9 @@
     "graphql": "^15.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.7",
+    "readable-stream": "^3.6.0",
     "semver": "^7.3.7",
+    "streams": "^0.0.7",
     "stripe": "^8.219.0"
   },
   "devDependencies": {
