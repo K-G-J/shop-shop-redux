@@ -1,7 +1,7 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React from 'react';
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
-import { idbPromise } from "../../utils/helpers";
+import { idbPromise } from '../../utils/helpers';
+import { useDispatch } from 'react-redux';
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch()

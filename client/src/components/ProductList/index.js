@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react'
-import { useQuery } from '@apollo/client'
-
-import ProductItem from '../ProductItem'
-import { QUERY_PRODUCTS } from '../../utils/queries'
-import spinner from '../../assets/spinner.gif'
-
-import { useSelector, useDispatch } from 'react-redux'
-import { UPDATE_PRODUCTS } from '../../utils/actions'
-
-import { idbPromise } from '../../utils/helpers'
+import React, { useEffect } from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import ProductItem from "../ProductItem";
+import { QUERY_PRODUCTS } from "../../utils/queries";
+import spinner from "../../assets/spinner.gif"
+import { UPDATE_PRODUCTS } from '../../utils/actions';
+import { idbPromise } from '../../utils/helpers';
+import { useDispatch, useSelector } from 'react-redux';
 
 function ProductList() {
   const state = useSelector(state => state)
