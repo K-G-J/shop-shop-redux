@@ -4,24 +4,22 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "cd server && npm start",
-    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build",
     "heroku-postbuild": "cd client && npm run build"
   },
+  "keywords": [],
   "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.4.0",
-    "if-env": "^1.0.4",
-    "polyfills": "^2.1.1",
-    "react-redux": "^7.2.1",
-    "redux": "^4.0.5"
-  },
+  "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.3.0",
-    "redux-devtools": "^3.6.0"
+    "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "@stripe/stripe-js": "^1.29.0",
+    "react-redux": "^8.0.1"
   }
 }
